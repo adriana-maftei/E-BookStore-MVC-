@@ -1,0 +1,71 @@
+﻿@model BookDisplayModel
+
+<div class="my-2">
+    <form asp-action="Index" class="row row-cols-lg-auto g-3 align-items-center">
+        <div class="col-12">
+            <label class="visually-hidden" for="genreID">Genres</label>
+            <select class="form-select" name="genreID">
+                <option selected>Choose...</option>
+                @foreach (var genre in Model.Genres)
+                {
+                    <option selected="@(genre.Id == Model.genreID)" value="@genre.Id">@genre.genreName</option>
+                }
+            </select>
+        </div>
+
+        <div class="col-12">
+            <label class="visually-hidden" for="searchTerm">Search by title</label>
+            <div class="input-group">
+                <div class="input-group-text"></div>
+                <input type="text" class="form-control" name="searchTerm" value="@Model.searchTerm" placeholder="Search by title">
+            </div>
+        </div>
+
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary">Search</button>
+            <a href="/Home/Index" class="btn btn-dark">Reset filter</a>
+        </div>
+    </form>
+</div>
+
+<div class="w-100 mt-4 d-flex flex-wrap">
+    @foreach (var book in Model.Books)
+    {
+        <div class="card mx-2 mb-4" style="width: 18rem;">
+            <img src="/images/bookcover.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+                <h5 class="card-title">@book.bookName</h5>
+                <p class="card-text">
+                    <b>Genre:  </b>@book.genreName <br />
+                    <b>Author: </b>@book.authorName <br />
+                    <b>Price: </b>@book.Price
+                </p>
+                <button type="button" onclick="add(@book.Id)" class="btn btn-primary">Add to cart</button>
+            </div>
+        </div>
+    }
+</div>
+
+@section Scripts{
+    <script>
+        async function add(bookId) {
+            var usernameElement = document.getElementById("username");
+            if (usernameElement == null) {
+                window.location.href = "/Identity/Account/Login";
+            }
+
+            try {
+                var response = await fetch(`/Cart/AddItem?bookId=${bookId}`);
+                if (response.status == 200) {
+                    var result = await response.json();
+                    var cartItemElements = document.getElementById("cartCount");
+                    cartItemElements.innerHTML = result;
+                    window.location.href = "#cartCount";
+                }
+            }
+            catch (error) {
+                console.log(error);
+            }
+        }
+    </script>
+}

@@ -1,0 +1,37 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\mafte\\source\\repos\\BookStoreShoopingCart\\BookStoreShoopingCartUI\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\BookStoreShoppingCartUI.bundle.scp.css",
+      "PackagePath": "staticwebassets\\BookStoreShoppingCartUI.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\mafte\\source\\repos\\BookStoreShoopingCart\\BookStoreShoopingCartUI\\wwwroot\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\mafte\\source\\repos\\BookStoreShoopingCart\\BookStoreShoopingCartUI\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\mafte\\source\\repos\\BookStoreShoopingCart\\BookStoreShoopingCartUI\\wwwroot\\images\\bookcover.jpg",
+      "PackagePath": "staticwebassets\\images\\bookcover.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.BookStoreShoppingCartUI.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.BookStoreShoppingCartUI.props",
+      "PackagePath": "build\\BookStoreShoppingCartUI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.BookStoreShoppingCartUI.props",
+      "PackagePath": "buildMultiTargeting\\BookStoreShoppingCartUI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.BookStoreShoppingCartUI.props",
+      "PackagePath": "buildTransitive\\BookStoreShoppingCartUI.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
